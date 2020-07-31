@@ -54,7 +54,7 @@ $routes->scope('/', function (RouteBuilder $builder) {
 	
 	$builder->setExtensions(['json']);
     $builder->resources('Users');
-    $builder->resources('Dependences');	$routes->scope('/', function (RouteBuilder $builder) {
+    $builder->resources('Dependences');
     $builder->resources('Locations');	
     $builder->resources('Students');	
     $builder->resources('Assessments');	
