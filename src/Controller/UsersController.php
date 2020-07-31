@@ -118,16 +118,8 @@ class UsersController extends AppController
 	
 	public function login()
 	{
-		if ($this->request->is('post')) {
-			//$user = $this->Auth->identify();
-			//if ($user) {
-			//	$this->Auth->setUser($user);
-			//	return $this->redirect($this->Auth->redirectUrl());
-			//}
-			if ($this->name == "User")
-			{
-				return $this->redirect("https://alavancaeducovid.000webhostapp.com/Items");
-			}
+		if ($this->request->is(['post', 'put'])) {
+            return $this->redirect("/items");
 		}
 		
 	}
