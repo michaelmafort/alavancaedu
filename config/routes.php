@@ -54,6 +54,14 @@ $routes->scope('/', function (RouteBuilder $builder) {
 	
 	$builder->setExtensions(['json']);
     $builder->resources('Users');
+    $builder->resources('Dependences');	$routes->scope('/', function (RouteBuilder $builder) {
+    $builder->resources('Locations');	
+    $builder->resources('Students');	
+    $builder->resources('Assessments');	
+    $builder->resources('AssessmentTemplates');	
+    $builder->resources('AssessmentItems');	
+    $builder->resources('Items');	
+    $builder->resources('ItemAnswers');
     /*
      * ...and connect the rest of 'Pages' controller's URLs.
      */
