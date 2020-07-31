@@ -102,4 +102,5 @@ class LocationsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
 }

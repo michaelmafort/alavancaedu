@@ -17,6 +17,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Cake\Event\EventInterface;
 
 /**
  * Application Controller
@@ -48,6 +49,13 @@ class AppController extends Controller
          * Enable the following component for recommended CakePHP form protection settings.
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
          */
-        //$this->loadComponent('FormProtection');
+        // $this->loadComponent('FormProtection');
+    }
+
+    public function beforeRender(EventInterface $event)
+    {
+        $this->viewBuilder()->setOption('serialize', array_keys($this->viewBuilder()->getVars()));
+
+        parent::beforeRender($event);
     }
 }
