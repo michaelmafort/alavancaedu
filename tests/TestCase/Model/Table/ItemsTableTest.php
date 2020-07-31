@@ -29,6 +29,7 @@ class ItemsTableTest extends TestCase
         'app.Departments',
         'app.Subjects',
         'app.AssesstementsItems',
+        'app.ItemAnswers',
     ];
 
     /**

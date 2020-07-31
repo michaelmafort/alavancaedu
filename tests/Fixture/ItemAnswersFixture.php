@@ -32,7 +32,7 @@ class ItemAnswersFixture extends TestFixture
         ],
         '_options' => [
             'engine' => 'InnoDB',
-            'collation' => 'latin1_swedish_ci'
+            'collation' => 'utf8mb4_general_ci'
         ],
     ];
     // phpcs:enable
@@ -49,7 +49,7 @@ class ItemAnswersFixture extends TestFixture
                 'student_id' => 1,
                 'assessment_id' => 1,
                 'item_id' => 1,
-                'dateTime' => '2020-07-31 03:14:59',
+                'dateTime' => '2020-07-31 09:57:23',
                 'answer' => 1,
                 'duration' => 1,
             ],

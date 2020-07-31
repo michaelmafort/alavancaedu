@@ -28,7 +28,7 @@ class AssesstementsItemsFixture extends TestFixture
         ],
         '_options' => [
             'engine' => 'InnoDB',
-            'collation' => 'latin1_swedish_ci'
+            'collation' => 'utf8mb4_general_ci'
         ],
     ];
     // phpcs:enable

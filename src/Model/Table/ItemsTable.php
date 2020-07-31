@@ -14,6 +14,7 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\DepartmentsTable&\Cake\ORM\Association\BelongsTo $Departments
  * @property \App\Model\Table\SubjectsTable&\Cake\ORM\Association\BelongsTo $Subjects
  * @property \App\Model\Table\AssesstementsItemsTable&\Cake\ORM\Association\HasMany $AssesstementsItems
+ * @property \App\Model\Table\ItemAnswersTable&\Cake\ORM\Association\HasMany $ItemAnswers
  *
  * @method \App\Model\Entity\Item newEmptyEntity()
  * @method \App\Model\Entity\Item newEntity(array $data, array $options = [])
@@ -52,6 +53,9 @@ class ItemsTable extends Table
             'foreignKey' => 'subject_id',
         ]);
         $this->hasMany('AssesstementsItems', [
+            'foreignKey' => 'item_id',
+        ]);
+        $this->hasMany('ItemAnswers', [
             'foreignKey' => 'item_id',
         ]);
     }

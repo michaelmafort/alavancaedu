@@ -23,7 +23,7 @@
 
 use Cake\Routing\Route\DashedRoute;
 use Cake\Routing\RouteBuilder;
-
+use Cake\Routing\Router;
 /*
  * The default class to use for all routes
  *
@@ -43,25 +43,17 @@ use Cake\Routing\RouteBuilder;
  */
 /** @var \Cake\Routing\RouteBuilder $routes */
 $routes->setRouteClass(DashedRoute::class);
+
 $routes->scope('/', function (RouteBuilder $builder) {
-
-    $builder->setExtensions(['json']);
-
-    $builder->resources('Dependences');
-    $builder->resources('Locations');
-    $builder->resources('Students');
-    $builder->resources('Assessments');
-    $builder->resources('AssessmentTemplates');
-    $builder->resources('AssessmentItems');
-    $builder->resources('Items');
-    $builder->resources('ItemAnswers');
     /*
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, templates/Pages/home.php)...
      */
-    $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
-
+    $builder->connect('/', ['controller' => 'Users', 'action' => 'login']);
+	
+	$builder->setExtensions(['json']);
+    $builder->resources('Users');
     /*
      * ...and connect the rest of 'Pages' controller's URLs.
      */

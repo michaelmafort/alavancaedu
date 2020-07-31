@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 namespace App\Controller;
+use Cake\Controller\Controller;
 
 /**
  * Users Controller
@@ -11,6 +12,13 @@ namespace App\Controller;
  */
 class UsersController extends AppController
 {
+	public function initialize(): void
+	{
+		
+		parent::initialize();
+		//$this->loadComponent('Auth');
+		//$this->Auth->allow(['logout', 'add']);
+	}
     /**
      * Index method
      *
@@ -107,4 +115,38 @@ class UsersController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+	
+	public function login()
+	{
+		if ($this->request->is('post')) {
+			//$user = $this->Auth->identify();
+			//if ($user) {
+			//	$this->Auth->setUser($user);
+			//	return $this->redirect($this->Auth->redirectUrl());
+			//}
+			if ($this->name == "User")
+			{
+				return $this->redirect("https://alavancaeducovid.000webhostapp.com/Items");
+			}
+		}
+		
+	}
+	public function login2()
+	{
+		//if ($this->request->is('post')) {
+		//	$user = $this->Auth->identify();
+		//	if ($user) {
+		//		$this->Auth->setUser($user);
+		//		return $this->redirect($this->Auth->redirectUrl());
+		//	}
+		//	
+		//}
+		//return $this->redirect("https://alavancaeducovid.000webhostapp.com/Items");
+	}
+	
+	public function logout()
+	{
+		$this->Flash->success('You are now logged out.');
+		return $this->redirect($this->Auth->logout());
+	}
 }

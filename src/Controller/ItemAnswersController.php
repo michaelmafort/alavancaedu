@@ -49,9 +49,10 @@ class ItemAnswersController extends AppController
      */
     public function add()
     {
+        $itemAnswer = $this->ItemAnswers->newEmptyEntity();
         if ($this->request->is('post')) {
-            $itemAnswer = $this->ItemAnswers->newEntities($this->request->getData());
-            if ($this->ItemAnswers->saveMany($itemAnswer)) {
+            $itemAnswer = $this->ItemAnswers->patchEntity($itemAnswer, $this->request->getData());
+            if ($this->ItemAnswers->save($itemAnswer)) {
                 $this->Flash->success(__('The item answer has been saved.'));
 
                 return $this->redirect(['action' => 'index']);

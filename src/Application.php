@@ -25,7 +25,6 @@ use Cake\Http\Middleware\CsrfProtectionMiddleware;
 use Cake\Http\MiddlewareQueue;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
-use Cake\I18n\I18n;
 
 /**
  * Application setup class.
@@ -44,8 +43,6 @@ class Application extends BaseApplication
     {
         // Call parent to load bootstrap from files.
         parent::bootstrap();
-
-        I18n::setLocale('pt_BR');
 
         if (PHP_SAPI === 'cli') {
             $this->bootstrapCli();
@@ -70,14 +67,15 @@ class Application extends BaseApplication
      */
     public function middleware(MiddlewareQueue $middlewareQueue): MiddlewareQueue
     {
-        $csrf = new CsrfProtectionMiddleware();
+		$csrf = new CsrfProtectionMiddleware();
 
         // Token check will be skipped when callback returns `true`.
         $csrf->skipCheckCallback(function ($request) {
             // Skip token check for API URLs.
-            if ($request->getParam('_ext') === 'json') {
-                return true;
-            }
+            //if ($request->getParam('_ext') == 'json') {
+            //    
+            //}
+			return true;
         });
         $middlewareQueue
             // Catch any exceptions in the lower layers,

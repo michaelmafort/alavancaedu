@@ -19,8 +19,8 @@ class AssessmentsFixture extends TestFixture
     public $fields = [
         'id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'assessment_template_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'token' => ['type' => 'string', 'length' => 10, 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null],
-        'guidelines' => ['type' => 'text', 'length' => null, 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null],
+        'token' => ['type' => 'string', 'length' => 10, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
+        'guidelines' => ['type' => 'text', 'length' => null, 'null' => true, 'default' => null, 'collate' => 'utf8mb4_general_ci', 'comment' => '', 'precision' => null],
         'starts_at' => ['type' => 'datetime', 'length' => null, 'precision' => null, 'null' => true, 'default' => null, 'comment' => ''],
         'ends_at' => ['type' => 'datetime', 'length' => null, 'precision' => null, 'null' => true, 'default' => null, 'comment' => ''],
         'duration' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
@@ -34,7 +34,7 @@ class AssessmentsFixture extends TestFixture
         ],
         '_options' => [
             'engine' => 'InnoDB',
-            'collation' => 'latin1_swedish_ci'
+            'collation' => 'utf8mb4_general_ci'
         ],
     ];
     // phpcs:enable
@@ -51,11 +51,11 @@ class AssessmentsFixture extends TestFixture
                 'assessment_template_id' => 1,
                 'token' => 'Lorem ip',
                 'guidelines' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
-                'starts_at' => '2020-07-30 01:35:47',
-                'ends_at' => '2020-07-30 01:35:47',
+                'starts_at' => '2020-07-31 09:57:22',
+                'ends_at' => '2020-07-31 09:57:22',
                 'duration' => 1,
-                'created' => '2020-07-30 01:35:47',
-                'modified' => '2020-07-30 01:35:47',
+                'created' => '2020-07-31 09:57:22',
+                'modified' => '2020-07-31 09:57:22',
             ],
         ];
         parent::init();

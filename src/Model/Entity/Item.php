@@ -24,6 +24,7 @@ use Cake\ORM\Entity;
  * @property \App\Model\Entity\Department $department
  * @property \App\Model\Entity\Subject $subject
  * @property \App\Model\Entity\AssesstementsItem[] $assesstements_items
+ * @property \App\Model\Entity\ItemAnswer[] $item_answers
  */
 class Item extends Entity
 {
@@ -51,5 +52,6 @@ class Item extends Entity
         'department' => true,
         'subject' => true,
         'assesstements_items' => true,
+        'item_answers' => true,
     ];
 }

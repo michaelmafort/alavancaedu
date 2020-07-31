@@ -120,7 +120,7 @@
                             <th><?= __('Id') ?></th>
                             <th><?= __('Student Id') ?></th>
                             <th><?= __('Assessment Id') ?></th>
-                            <th><?= __('Question Id') ?></th>
+                            <th><?= __('Item Id') ?></th>
                             <th><?= __('DateTime') ?></th>
                             <th><?= __('Answer') ?></th>
                             <th><?= __('Duration') ?></th>
@@ -131,7 +131,7 @@
                             <td><?= h($itemAnswers->id) ?></td>
                             <td><?= h($itemAnswers->student_id) ?></td>
                             <td><?= h($itemAnswers->assessment_id) ?></td>
-                            <td><?= h($itemAnswers->question_id) ?></td>
+                            <td><?= h($itemAnswers->item_id) ?></td>
                             <td><?= h($itemAnswers->dateTime) ?></td>
                             <td><?= h($itemAnswers->answer) ?></td>
                             <td><?= h($itemAnswers->duration) ?></td>

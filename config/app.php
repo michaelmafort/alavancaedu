@@ -50,7 +50,7 @@ return [
     'App' => [
         'namespace' => 'App',
         'encoding' => env('APP_ENCODING', 'UTF-8'),
-        'defaultLocale' => env('APP_DEFAULT_LOCALE', 'pt_BR'),
+        'defaultLocale' => env('APP_DEFAULT_LOCALE', 'en_US'),
         'defaultTimezone' => env('APP_DEFAULT_TIMEZONE', 'UTC'),
         'base' => false,
         'dir' => 'src',
@@ -301,7 +301,13 @@ return [
              * then you MUST use the `flags` config to set your charset encoding.
              * For e.g. `'flags' => [\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4']`
              */
-            'flags' => [],
+			 'username' => 'root',
+			'password' => '', 
+			'database' => 'alavancaedu',
+			'encoding' => 'utf8',
+			'timezone' => 'UTC',
+			'flags' => [],
+
             'cacheMetadata' => true,
             'log' => false,
 
