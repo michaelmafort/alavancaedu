@@ -49,6 +49,12 @@ $routes->scope('/', function (RouteBuilder $builder) {
 
     $builder->resources('Dependences');
     $builder->resources('Locations');
+    $builder->resources('Students');
+    $builder->resources('Assessments');
+    $builder->resources('AssessmentTemplates');
+    $builder->resources('AssessmentItems');
+    $builder->resources('Items');
+    $builder->resources('ItemAnswers');
     /*
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
      * its action called 'display', and we pass a param to select the view file

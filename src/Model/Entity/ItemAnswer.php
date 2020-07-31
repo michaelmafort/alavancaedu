@@ -11,14 +11,14 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property int|null $student_id
  * @property int|null $assessment_id
- * @property int|null $question_id
+ * @property int|null $item_id
  * @property \Cake\I18n\FrozenTime|null $dateTime
  * @property int|null $answer
  * @property int|null $duration
  *
  * @property \App\Model\Entity\Student $student
  * @property \App\Model\Entity\Assessment $assessment
- * @property \App\Model\Entity\Question $question
+ * @property \App\Model\Entity\Item $item
  */
 class ItemAnswer extends Entity
 {
@@ -34,12 +34,12 @@ class ItemAnswer extends Entity
     protected $_accessible = [
         'student_id' => true,
         'assessment_id' => true,
-        'question_id' => true,
+        'item_id' => true,
         'dateTime' => true,
         'answer' => true,
         'duration' => true,
         'student' => true,
         'assessment' => true,
-        'question' => true,
+        'item' => true,
     ];
 }

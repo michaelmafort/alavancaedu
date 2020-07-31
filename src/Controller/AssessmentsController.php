@@ -36,7 +36,7 @@ class AssessmentsController extends AppController
     public function view($id = null)
     {
         $assessment = $this->Assessments->get($id, [
-            'contain' => ['AssessmentTemplates', 'Classrooms', 'AssesstementsItems', 'ItemAnswers'],
+            'contain' => ['AssessmentTemplates', 'Classrooms', 'AssesstementsItems' => ['Items'], 'ItemAnswers'],
         ]);
 
         $this->set(compact('assessment'));

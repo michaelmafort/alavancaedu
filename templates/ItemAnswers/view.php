@@ -27,12 +27,12 @@
                     <td><?= $itemAnswer->has('assessment') ? $this->Html->link($itemAnswer->assessment->id, ['controller' => 'Assessments', 'action' => 'view', $itemAnswer->assessment->id]) : '' ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($itemAnswer->id) ?></td>
+                    <th><?= __('Item') ?></th>
+                    <td><?= $itemAnswer->has('item') ? $this->Html->link($itemAnswer->item->name, ['controller' => 'Items', 'action' => 'view', $itemAnswer->item->id]) : '' ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Question Id') ?></th>
-                    <td><?= $this->Number->format($itemAnswer->question_id) ?></td>
+                    <th><?= __('Id') ?></th>
+                    <td><?= $this->Number->format($itemAnswer->id) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Answer') ?></th>

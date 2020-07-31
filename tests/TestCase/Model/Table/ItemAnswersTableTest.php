@@ -28,7 +28,7 @@ class ItemAnswersTableTest extends TestCase
         'app.ItemAnswers',
         'app.Students',
         'app.Assessments',
-        'app.Questions',
+        'app.Items',
     ];
 
     /**

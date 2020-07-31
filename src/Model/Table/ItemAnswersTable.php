@@ -13,7 +13,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\StudentsTable&\Cake\ORM\Association\BelongsTo $Students
  * @property \App\Model\Table\AssessmentsTable&\Cake\ORM\Association\BelongsTo $Assessments
- * @property \App\Model\Table\QuestionsTable&\Cake\ORM\Association\BelongsTo $Questions
+ * @property \App\Model\Table\ItemsTable&\Cake\ORM\Association\BelongsTo $Items
  *
  * @method \App\Model\Entity\ItemAnswer newEmptyEntity()
  * @method \App\Model\Entity\ItemAnswer newEntity(array $data, array $options = [])
@@ -51,8 +51,8 @@ class ItemAnswersTable extends Table
         $this->belongsTo('Assessments', [
             'foreignKey' => 'assessment_id',
         ]);
-        $this->belongsTo('Questions', [
-            'foreignKey' => 'question_id',
+        $this->belongsTo('Items', [
+            'foreignKey' => 'item_id',
         ]);
     }
 
@@ -94,7 +94,7 @@ class ItemAnswersTable extends Table
     {
         $rules->add($rules->existsIn(['student_id'], 'Students'));
         $rules->add($rules->existsIn(['assessment_id'], 'Assessments'));
-        $rules->add($rules->existsIn(['question_id'], 'Questions'));
+        $rules->add($rules->existsIn(['item_id'], 'Items'));
 
         return $rules;
     }

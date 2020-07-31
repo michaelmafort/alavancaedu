@@ -24,7 +24,7 @@
                 <?php
                     echo $this->Form->control('student_id', ['options' => $students, 'empty' => true]);
                     echo $this->Form->control('assessment_id', ['options' => $assessments, 'empty' => true]);
-                    echo $this->Form->control('question_id');
+                    echo $this->Form->control('item_id', ['options' => $items, 'empty' => true]);
                     echo $this->Form->control('dateTime', ['empty' => true]);
                     echo $this->Form->control('answer');
                     echo $this->Form->control('duration');

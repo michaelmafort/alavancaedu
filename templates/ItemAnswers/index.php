@@ -14,7 +14,7 @@
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('student_id') ?></th>
                     <th><?= $this->Paginator->sort('assessment_id') ?></th>
-                    <th><?= $this->Paginator->sort('question_id') ?></th>
+                    <th><?= $this->Paginator->sort('item_id') ?></th>
                     <th><?= $this->Paginator->sort('dateTime') ?></th>
                     <th><?= $this->Paginator->sort('answer') ?></th>
                     <th><?= $this->Paginator->sort('duration') ?></th>
@@ -27,7 +27,7 @@
                     <td><?= $this->Number->format($itemAnswer->id) ?></td>
                     <td><?= $itemAnswer->has('student') ? $this->Html->link($itemAnswer->student->name, ['controller' => 'Students', 'action' => 'view', $itemAnswer->student->id]) : '' ?></td>
                     <td><?= $itemAnswer->has('assessment') ? $this->Html->link($itemAnswer->assessment->id, ['controller' => 'Assessments', 'action' => 'view', $itemAnswer->assessment->id]) : '' ?></td>
-                    <td><?= $this->Number->format($itemAnswer->question_id) ?></td>
+                    <td><?= $itemAnswer->has('item') ? $this->Html->link($itemAnswer->item->name, ['controller' => 'Items', 'action' => 'view', $itemAnswer->item->id]) : '' ?></td>
                     <td><?= h($itemAnswer->dateTime) ?></td>
                     <td><?= $this->Number->format($itemAnswer->answer) ?></td>
                     <td><?= $this->Number->format($itemAnswer->duration) ?></td>

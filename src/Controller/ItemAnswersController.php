@@ -19,7 +19,7 @@ class ItemAnswersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Students', 'Assessments', 'Questions'],
+            'contain' => ['Students', 'Assessments', 'Items'],
         ];
         $itemAnswers = $this->paginate($this->ItemAnswers);
 
@@ -36,7 +36,7 @@ class ItemAnswersController extends AppController
     public function view($id = null)
     {
         $itemAnswer = $this->ItemAnswers->get($id, [
-            'contain' => ['Students', 'Assessments', 'Questions'],
+            'contain' => ['Students', 'Assessments', 'Items'],
         ]);
 
         $this->set(compact('itemAnswer'));
@@ -49,10 +49,9 @@ class ItemAnswersController extends AppController
      */
     public function add()
     {
-        $itemAnswer = $this->ItemAnswers->newEmptyEntity();
         if ($this->request->is('post')) {
-            $itemAnswer = $this->ItemAnswers->patchEntity($itemAnswer, $this->request->getData());
-            if ($this->ItemAnswers->save($itemAnswer)) {
+            $itemAnswer = $this->ItemAnswers->newEntities($this->request->getData());
+            if ($this->ItemAnswers->saveMany($itemAnswer)) {
                 $this->Flash->success(__('The item answer has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
@@ -61,8 +60,8 @@ class ItemAnswersController extends AppController
         }
         $students = $this->ItemAnswers->Students->find('list', ['limit' => 200]);
         $assessments = $this->ItemAnswers->Assessments->find('list', ['limit' => 200]);
-        $questions = $this->ItemAnswers->Questions->find('list', ['limit' => 200]);
-        $this->set(compact('itemAnswer', 'students', 'assessments', 'questions'));
+        $items = $this->ItemAnswers->Items->find('list', ['limit' => 200]);
+        $this->set(compact('itemAnswer', 'students', 'assessments', 'items'));
     }
 
     /**
@@ -88,8 +87,8 @@ class ItemAnswersController extends AppController
         }
         $students = $this->ItemAnswers->Students->find('list', ['limit' => 200]);
         $assessments = $this->ItemAnswers->Assessments->find('list', ['limit' => 200]);
-        $questions = $this->ItemAnswers->Questions->find('list', ['limit' => 200]);
-        $this->set(compact('itemAnswer', 'students', 'assessments', 'questions'));
+        $items = $this->ItemAnswers->Items->find('list', ['limit' => 200]);
+        $this->set(compact('itemAnswer', 'students', 'assessments', 'items'));
     }
 
     /**
