@@ -14,7 +14,6 @@
  * @var \App\View\AppView $this
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,45 +21,33 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        <?= $cakeDescription ?>:
+        Alavanca Edu: 
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
+    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake', 'fontawesome/css/all.min']) ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
 <body>
-	<?php 
-	if (!($this->name == "Users"))
-	{  
-		echo ('
-		<nav class="top-nav" style="background:#ffe6e6;">
+	<?php if (!($this->name == "Users")): ?>
+    <nav class="top-nav" style="max-width: 100%; justify-content:center">
         <div class="top-nav-links">		
-			<a href="https://alavancaeducovid.000webhostapp.com/users"				><u>Users</u></a>
-            <a href="https://alavancaeducovid.000webhostapp.com/Students"			><u>Students</u></a>
-			<a href="https://alavancaeducovid.000webhostapp.com/Items"				><u>Items</u></a>
-            <a href="https://alavancaeducovid.000webhostapp.com/Assessments"			><u>Assessments</u></a>
-			<a href="https://alavancaeducovid.000webhostapp.com/AssessmentTemplates"	><u>Templates</u></a>
-            <a href="https://alavancaeducovid.000webhostapp.com/AssesstementsItems"	><u>Assessments-Items</u></a>
-			<a href="https://alavancaeducovid.000webhostapp.com/Departments"			><u>Departments</u></a>
-            <a href="https://alavancaeducovid.000webhostapp.com/Locations"			><u>Locations</u></a>
-			<a href="https://alavancaeducovid.000webhostapp.com/Schools"				><u>Schools</u></a>
-            <a href="https://alavancaeducovid.000webhostapp.com/Classrooms"			><u>Classrooms</u></a>
-			<a href="https://alavancaeducovid.000webhostapp.com/Subjects"			><u>Subjects</u></a>
-			<a href="https://alavancaeducovid.000webhostapp.com/ItemAnswers"			><u>Answer</u></a>
-			<a href="https://alavancaeducovid.000webhostapp.com/Dependences"			><u>Dependences</u></a>
+            <?= $this->Html->link('<i class="fa fa-users"></i> ' . __('Users'), '/users', ['escape' => false, 'class' => 'button button-outline']);?>
+            <?= $this->Html->link('<i class="fa fa-user-graduate"></i> ' . __('Students'), '/students', ['escape' => false, 'class' => 'button button-outline']);?>
+            <?= $this->Html->link('<i class="fa fa-book-reader"></i> ' . __('Items'), '/items', ['escape' => false, 'class' => 'button button-outline']);?>
+            <?= $this->Html->link('<i class="fa fa-book"></i> ' . __('Assessments'), '/assessments', ['escape' => false, 'class' => 'button button-outline']);?>
+            <?= $this->Html->link('<i class="fa fa-building"></i> ' . __('Departments'), '/departments', ['escape' => false, 'class' => 'button button-outline']);?>
+            <?= $this->Html->link('<i class="fa fa-university"></i> ' . __('Schools'), '/schools', ['escape' => false, 'class' => 'button button-outline']);?>
+            <?= $this->Html->link('<i class="fa fa-chalkboard-teacher"></i> ' . __('Classrooms'), '/classrooms', ['escape' => false, 'class' => 'button button-outline']);?>
         </div>
-    </nav>');
-	}
-	
-	?>
-    
+    </nav>
+    <?php endif; ?>
     <main class="main">
         <div class="container">
             <?= $this->Flash->render() ?>
